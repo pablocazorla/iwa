@@ -1,0 +1,37 @@
+{
+	"name": "tuvinoclub",
+	"pages": {
+		"page0": {
+			"divs": {
+				"div0": {
+					"image": {
+						"src": "home1.jpg"
+					},
+					"links": {
+						"link0": {
+							"href": "#1",
+							"position": "10,12",
+							"dimensions": "5,20"
+						}
+					}
+				}
+			}
+		},
+		"page1": {
+			"divs": {
+				"div0": {
+					"image": {
+						"src": "results.jpg"
+					},
+					"links": {
+						"link0": {
+							"href": "#0",
+							"position": "10,12",
+							"dimensions": "5,20"
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,42 @@
+<!doctype HTML>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>Template</title>
+		<meta name="description" content="">
+		<meta name="keywords" content="">
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		
+		<!-- CSS -->
+		<link type="text/css" rel="stylesheet" href="css/iwa.css">
+	</head>
+	<body>
+		<div class="iwa-toolbar clearfix" id="iwa-toolbar">
+			<div class="iwa-brand">
+				<h1>IWA</h1>
+			</div>
+			<div class="iwa-tools">
+				<div id="iwa-load-btn" class="iwa-btn">Load</div>
+			</div>
+			<div id="iwa-msg"></div>
+			<div id="iwa-show-toolbar" title="Show/Hide Toolbar"><span></span></div>
+		</div>
+		<div id="iwa-container"></div>
+		<div id="iwa-load-modal" class="iwa-modal">
+			<h2>Load Project</h2>
+			<p>
+				<label>Project Name:</label>
+				<input type="text" value="" id="iwa-load-input-name" placeholder="Name"/>
+			</p>
+			<p class="align-center">
+				<span class="iwa-btn sec cancel-btn">Cancel</span>
+				<span id="iwa-modal-load-btn" class="iwa-btn">Load</span>
+			</p>
+		</div>
+		<div id="iwa-dimmer"></div>
+		<script src="js/vendors/jquery-1.9.1.min.js"></script>
+		<script src="js/iwa.js"></script>
+	</body>
+</html>
