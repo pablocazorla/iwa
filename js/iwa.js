@@ -44,6 +44,7 @@
 					$('#iwa-modal-load-btn').click(function() {
 						var n = $('#iwa-load-input-name').val();
 						MODAL.hide();
+						TOOLBAR.hide();
 						load(n);
 					});
 					return this;
@@ -83,16 +84,47 @@
 
 				var zInd = 20,
 					renderDiv = function(divData) {
-						var $div = $('<div class="iwa-page-div"></div>');
-						if (divData.position !== 'static') {
-							$div.css({
-								position: divData.position
-							});
-						}
+						var $div = $('<div class="iwa-page-div"></div>'),
+						positionValues = divData.positionValues.split(','),
+						sufixSize= function(str){
+							return (str === 'auto') ? '' : '%';
+						};
+
+						$div.css({
+							position: divData.position,
+							left: parseFloat(positionValues[0])+'%',
+							top: parseFloat(positionValues[1])+'%',
+							width: divData.width + sufixSize(divData.width),
+							height: divData.height + sufixSize(divData.height)
+						});
+
 						$container.append($div);
+
+						$('<img src="projects/' + dataProject.name + '/' + divData.image.src + '"/>').appendTo($div);
+
+						for (var a in divData.links) {
+							var link = divData.links[a],
+								positionLink = link.position.split(','),
+								dimensionsLink = link.dimensions.split(',');
+								
+							$('<a href="' + link.href + '"></a>').css({
+								left: parseFloat(positionLink[0]) + '%',
+								top: parseFloat(positionLink[1]) + '%',
+								width: parseFloat(dimensionsLink[0]) + '%',
+								height: parseFloat(dimensionsLink[1]) + '%'
+							}).appendTo($div);
+						}
+
+						$div.find('a').click(function(e){
+							var h = $(this).attr('href');
+							if(h.indexOf('#') === 0){
+								e.preventDefault();
+								var n = h.substring(1);
+								renderPage(n);
+							}
+						});
+
 					};
-
-
 
 				return function(pageId) {
 					$container.html('');
@@ -105,7 +137,6 @@
 					}
 				}
 			})(),
-
 
 
 			storeProject = function(data) {

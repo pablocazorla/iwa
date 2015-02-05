@@ -4,8 +4,10 @@
 		"page0": {
 			"divs": {
 				"div0": {
-					"position":"static",
-					"positionValues":null,
+					"position": "static",
+					"positionValues": "0,0",
+					"width": "auto",
+					"height": "auto",
 					"image": {
 						"src": "home1.jpg"
 					},
@@ -22,8 +24,10 @@
 		"page1": {
 			"divs": {
 				"div0": {
-					"position":"static",
-					"positionValues":null,
+					"position": "static",
+					"positionValues": "0,0",
+					"width": "auto",
+					"height": "auto",
 					"image": {
 						"src": "results.jpg"
 					},
@@ -31,7 +35,7 @@
 						"link0": {
 							"href": "#0",
 							"position": "10,12",
-							"dimensions": "5,20"
+							"dimensions": "5,2"
 						}
 					}
 				}
